@@ -2,7 +2,7 @@
 {% block content %}
 <h3>Lista de Diretores</h3>
 
-<a href="{{ url_for('create_diretor') }}">➕ Novo Diretor</a>
+<a href="{{ url_for('create_diretor') }}"> Novo Diretor</a>
 
 <table>
     <thead>
@@ -25,4 +25,5 @@
         {% endfor %}
     </tbody>
 </table>
+<a href="{{ url_for('index_filmes') }}">Ver filmes</a>
 {% endblock %}

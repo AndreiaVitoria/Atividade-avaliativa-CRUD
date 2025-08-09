@@ -12,6 +12,7 @@ class FilmeService:
     def get_all_filmes(self):
         return self.filme_repository.get_all_filmes()
     
+    
     def _validar_ano(self, ano):
         if ano is None:
             raise ValueError("Ano do filme deve ser informado.")
@@ -31,8 +32,6 @@ class FilmeService:
             raise ValueError("Título do filme não pode estar vazio.")
         if len(filme.get_titulo()) < 2:
             raise ValueError("Título deve ter no mínimo 2 caracteres.")
-        if any(char.isdigit() for char in filme.get_titulo()):
-            raise ValueError("Título do filme não pode conter números.")
         if not filme.get_genero():
             raise ValueError("Gênero do filme não pode estar vazio.")
         if not filme.get_diretor_id():
@@ -51,8 +50,6 @@ class FilmeService:
             raise ValueError("ID do filme não pode estar vazio para atualização.")
         if not filme.get_titulo():
             raise ValueError("Título do filme não pode estar vazio.")
-        if any(char.isdigit() for char in filme.get_titulo()):
-            raise ValueError("Título do filme não pode conter números.")
         if not filme.get_genero():
             raise ValueError("Gênero do filme não pode estar vazio.")
         if not filme.get_diretor_id():

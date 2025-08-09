@@ -31,6 +31,8 @@ class DiretorService:
     def update_diretor(self, diretor: DiretorModel):
         if diretor.get_id() is None:
             raise ValueError("ID do diretor não pode estar vazio para atualização.")
+        if len(diretor.get_nome()) < 2:
+            raise ValueError("Nome deve ter no mínimo 2 caracteres.")
         if not diretor.get_nome():
             raise ValueError("Nome do diretor não pode estar vazio.")
         if any(char.isdigit() for char in diretor.get_nome()):

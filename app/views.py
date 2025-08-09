@@ -11,7 +11,7 @@ filme_service = FilmeService()
 
 @app.route('/')
 def home():
-    return render_template('base.html')
+    return redirect(url_for('index_diretores'))
 
 @app.route('/diretores')
 def index_diretores():

@@ -12,6 +12,7 @@
     Ano: <input type="number" name="ano" value="{{ filme.get_ano() if filme else '' }}"><br>
     Diretor:
     <select name="diretor_id">
+        <option value="">Selecione um diretor</option>
         {% for diretor in diretores %}
         <option value="{{ diretor.get_id() }}" {% if filme and diretor.get_id()== filme.get_diretor_id() %}selected{% endif%}>
             {{ diretor.get_nome() }}
@@ -20,4 +21,6 @@
     </select><br>
     <button type="submit">Salvar</button>
 </form>
+<a href="{{ url_for('index_filmes') }}">Voltar</a>
+
 {% endblock %}

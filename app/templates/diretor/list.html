@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Lista de Diretores</h3>
+
+<a href="{{ url_for('create_diretor') }}">➕ Novo Diretor</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Nacionalidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for diretor in diretores %}
+        <tr>
+            <td>{{ diretor.get_id() }}</td>
+            <td>{{ diretor.get_nome() }}</td>
+            <td>{{ diretor.get_nacionalidade() }}</td>
+            <td>
+                <a href="{{ url_for('edit_diretor', pk=diretor.get_id()) }}">Editar |</a>
+                <a href="{{ url_for('delete_diretor', pk=diretor.get_id()) }}">Deletar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

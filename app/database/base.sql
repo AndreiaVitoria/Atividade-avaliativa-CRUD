@@ -1,8 +1,7 @@
 CREATE TABLE diretor (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
-    nacionalidade TEXT,
-    data_nascimento DATE
+    nacionalidade TEXT
 );
 
 CREATE TABLE filme (

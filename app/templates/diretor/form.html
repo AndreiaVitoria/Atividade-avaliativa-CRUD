@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if diretor %}Editar Diretor{% else %}Novo Diretor{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% if diretor %}Editar Diretor{% else %}Novo Diretor{% endif %}</h1>
+    <form method="post">
+        Nome: <input type="text" name="nome" value="{{ diretor.get_nome() if diretor else '' }}"><br>
+        Nacionalidade: <input type="text" name="nacionalidade" value="{{ diretor.get_nacionalidade() if diretor else '' }}"><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{{ url_for('index_diretores') }}">Voltar</a>
+{% endblock %}

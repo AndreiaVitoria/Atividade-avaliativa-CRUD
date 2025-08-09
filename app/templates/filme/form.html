@@ -9,7 +9,7 @@
 <form method="post">
     Título: <input type="text" name="titulo" value="{{ filme.get_titulo() if filme else '' }}"><br>
     Gênero: <input type="text" name="genero" value="{{ filme.get_genero() if filme else '' }}"><br>
-    Ano: <input type="number" name="ano_lancamento" value="{{ filme.get_ano() if filme else '' }}"><br>
+    Ano: <input type="number" name="ano" value="{{ filme.get_ano() if filme else '' }}"><br>
     Diretor:
     <select name="diretor_id">
         {% for diretor in diretores %}

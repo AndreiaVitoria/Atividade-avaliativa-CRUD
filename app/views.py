@@ -52,7 +52,11 @@ def create_filme():
     if request.method == 'POST':
         titulo = request.form['titulo']
         genero = request.form['genero']
-        ano = request.form.get('ano', type=int)
+        ano = request.form.get('ano')
+        try:
+            ano = int(ano)
+        except (TypeError, ValueError):
+            ano = None
         diretor_id = int(request.form['diretor_id'])
         filme = FilmeModel(id=None, titulo=titulo, genero=genero, ano=ano, diretor_id=diretor_id)
         filme_service.create_filme(filme)

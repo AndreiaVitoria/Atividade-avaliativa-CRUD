@@ -4,23 +4,20 @@ class DiretorModel:
         self.__nome = nome
         self.__nacionalidade = nacionalidade
 
-    # Getters
     def get_id(self):
         return self.__id
+
+    def set_id(self, id):
+        self.__id = id
 
     def get_nome(self):
         return self.__nome
 
-    def get_nacionalidade(self):
-        return self.__nacionalidade
-
-
-    # Setters
-    def set_id(self, id):
-        self.__id = id
-
     def set_nome(self, nome):
         self.__nome = nome
+
+    def get_nacionalidade(self):
+        return self.__nacionalidade
 
     def set_nacionalidade(self, nacionalidade):
         self.__nacionalidade = nacionalidade

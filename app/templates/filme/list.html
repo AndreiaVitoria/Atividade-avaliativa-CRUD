@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Lista de Filmes</h3>
+
+<a href="{{ url_for('create_filme') }}">➕ Novo Filme</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Gênero</th>
+            <th>Ano</th>
+            <th>Diretor</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for filme in filmes %}
+        <tr>
+            <td>{{ filme.get_titulo() }}</td>
+            <td>{{ filme.get_genero() }}</td>
+            <td>{{ filme.get_ano() }}</td>
+            <td>{{ filme.diretor_nome }}</td>
+            <td>
+                <a href="{{ url_for('update_filme', pk=filme.get_id()) }}">Editar |</a>
+                <a href="{{ url_for('delete_filme', pk=filme.get_id()) }}">Deletar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

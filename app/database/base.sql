@@ -7,8 +7,8 @@ CREATE TABLE diretor (
 CREATE TABLE filme (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titulo TEXT NOT NULL,
-    ano_lancamento INTEGER,
     genero TEXT,
-    id_diretor INTEGER NOT NULL,
-    FOREIGN KEY (id_diretor) REFERENCES diretor (id) ON DELETE CASCADE
+    ano INTEGER,
+    diretor_id INTEGER NOT NULL,
+    FOREIGN KEY (diretor_id) REFERENCES diretor(id) ON DELETE CASCADE
 );
